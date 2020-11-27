@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Car Price Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+	<h2>Predict the price of Car</h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="wheel-base" placeholder="wheel-base" required="required" />
+        <input type="text" name="length" placeholder="length" required="required" />
+		<input type="text" name="width" placeholder="width" required="required" />
+		<input type="text" name="curb-weight" placeholder="curb-weight" required="required" />
+ 		<input type="text" name="engine-size" placeholder="engine-size" required="required" />
+ 		<input type="text" name="bore" placeholder="bore" required="required" />
+ 		<input type="text" name="horsepower" placeholder="horsepower" required="required" />
+        <input type="text" name="mileage" placeholder="mileage" required="required" />
+        <input type="text" name="Luxury" placeholder="Luxury" required="required" />
+        <input type="text" name="Mid_Range" placeholder="Mid_Range" required="required" />
+        <input type="text" name="turbo" placeholder="turbo" required="required" />
+        <input type="text" name="gas" placeholder="gas" required="required" />
+        <input type="text" name="five" placeholder="five" required="required" />
+        <input type="text" name="four" placeholder="four" required="required" />
+        <input type="text" name="six" placeholder="six" required="required" />
+        <input type="text" name="three" placeholder="three" required="required" />
+        <input type="text" name="twelve" placeholder="twelve" required="required" />
+        <input type="text" name="two" placeholder="two" required="required" />
+        <input type="text" name="l" placeholder="l" required="required" />
+        <input type="text" name="ohc" placeholder="ohc" required="required" />
+        <input type="text" name="rotor" placeholder="rotor" required="required" />
+        <input type="text" name="fwd" placeholder="fwd" required="required" />
+        <input type="text" name="rwd" placeholder="rwd" required="required" />
+        <input type="text" name="hardtop" placeholder="hardtop" required="required" />
+        <input type="text" name="hatchback" placeholder="hatchback" required="required" />
+        <input type="text" name="sedan" placeholder="sedan" required="required" />
+        <input type="text" name="wagon" placeholder="wagon" required="required" />
+
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
